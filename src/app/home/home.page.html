@@ -1,0 +1,26 @@
+<ion-toolbar>
+  <ion-buttons slot="start" >
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <h1>
+    Barrios
+  </h1>
+  
+  
+</ion-toolbar>
+
+<ion-content>
+<div *ngFor="let product of products ">
+  
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    
+      <ion-card>      
+        <h3>
+          <ion-button [title]="product.name + ' details'"[routerLink]="['/products', product.id]" background-color="#FFFFF">
+             {{ product.name }}
+            </ion-button>
+        </h3>  
+      </ion-card>
+</ion-infinite-scroll>
+</div>
+</ion-content>
